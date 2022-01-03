@@ -64,9 +64,9 @@ const Register = () => {
                 title: "enter email", buttonText: "Submit",
                 text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
             })
-        } else if (!ValidateEmail(data.email)) {
-
-        }else if (data.pass == '') {
+        } else if (ValidateEmail(data.email)) {
+            swal("fill data with @!", "You clicked the button!", "error");
+        } else if (data.pass == '') {
             ShowAlert({
                 title: "enter password", buttonText: "Submit",
                 text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
@@ -75,7 +75,7 @@ const Register = () => {
         else {
             swal("All Good", "", "sucess");
         }
-  
+
     }
 
 
@@ -104,7 +104,7 @@ const Register = () => {
                 <div className="form_data">
                     <label htmlFor="">password</label>
                     <div className="pass">
-                        <input type={show ? "text" : "password"} value={data.pass} onChange={(e) => setData({ ...data, password: e.target.value })} name="pass" />
+                        <input type={show ? "text" : "password"} value={data.pass} onChange={(e) => setData({ ...data, pass: e.target.value })} name="pass" />
                         <i class={show ? "fas fa-eye icon icon" : "fas fa-eye-slash icon"} onClick={() => setShow(!show)}></i>
                     </div>
                 </div>
