@@ -15,7 +15,7 @@ const Register = () => {
         pass: ""
     });
 
-    const [getdetails, setDetils] = useState([]);
+ 
 
 
     const getdata = (e) => {
@@ -34,8 +34,9 @@ const Register = () => {
         console.log("all done" + JSON.stringify(data));
     }
 
-    const senddata = (e) => {
+    const senddata = () => {
         //  e.preventDefault();
+        // jo form use karsu to bydefault refresh nehaviour aavse
 
         console.log("User Data : " + JSON.stringify(data));
 
@@ -65,7 +66,10 @@ const Register = () => {
                 text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
             })
         } else if (ValidateEmail(data.email)) {
-            swal("fill data with @!", "You clicked the button!", "error");
+            ShowAlert({
+                title: "include @ provide", buttonText: "Submit",
+                text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
+            })
         } else if (data.pass == '') {
             ShowAlert({
                 title: "enter password", buttonText: "Submit",
@@ -73,7 +77,10 @@ const Register = () => {
             })
         }
         else {
-            swal("All Good", "", "sucess");
+            ShowAlert({
+                title: "done", buttonText: "Submit",
+                text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
+            })
         }
 
     }
@@ -122,6 +129,20 @@ const Register = () => {
 export default Register;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const [getdetails, setDetils] = useState([]);
 
 {/* <i class=""></i> */ }
 
