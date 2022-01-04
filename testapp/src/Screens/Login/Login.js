@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 import { ShowAlert, ValidateEmail } from '../../utils/CommonFunctions'
 
 
@@ -73,8 +74,9 @@ const Login = () => {
                         </div>
                     </div>
 
-                    <button className='btn' onClick={() => clicked()}> Login</button>
+                    <button className='btn btn-primary' onClick={() => clicked()}> Login</button>
                     {/* </form> */}
+                    <span className='mt-3'>create a account <NavLink to = "/register"> register</NavLink> </span>
                 </div>
 
             </section>
