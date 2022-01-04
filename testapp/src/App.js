@@ -1,15 +1,16 @@
 import './App.css';
-import Register from './Screens/Register/Register';
 import React from 'react'
-import Login from './Screens/Login/Login'
 import "./Screens/Login/login.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navigation from './Screens/Naigation/Navigation';
+
 
 const App = () => {
   return (
-      <Login />
+    <Navigation />
   );
- 
-  
+
+
 }
 
 export default App

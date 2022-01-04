@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./register.css";
-import swal from 'sweetalert';
 import { ShowAlert, ValidateEmail } from '../../utils/CommonFunctions'
+import Button from 'react-bootstrap/Button'
 
 const Register = () => {
 
@@ -18,18 +18,7 @@ const Register = () => {
  
 
 
-    const getdata = (e) => {
-        const { name, value } = e.target;
-        // console.log(value);
-
-        setData((preval) => {
-            return {
-                ...preval,
-                [name]: value
-            }
-        })
-    };
-
+    
     const onAlertButtonTap = (data) => {
         console.log("all done" + JSON.stringify(data));
     }
@@ -50,16 +39,6 @@ const Register = () => {
                 title: "enter lname", buttonText: "Submit",
                 text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
             })
-        } else if (data.mobile == '') {
-            ShowAlert({
-                title: "enter mobile", buttonText: "Submit",
-                text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
-            })
-        } else if (data.mobile.length != 10) {
-            ShowAlert({
-                title: "enter 10 digit", buttonText: "Submit",
-                text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
-            })
         } else if (data.email == '') {
             ShowAlert({
                 title: "enter email", buttonText: "Submit",
@@ -70,7 +49,17 @@ const Register = () => {
                 title: "include @ provide", buttonText: "Submit",
                 text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
             })
-        } else if (data.pass == '') {
+        }else if (data.mobile == '') {
+            ShowAlert({
+                title: "enter mobile", buttonText: "Submit",
+                text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
+            })
+        } else if (data.mobile.length != 10) {
+            ShowAlert({
+                title: "enter 10 digit", buttonText: "Submit",
+                text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
+            })
+        }  else if (data.pass == '') {
             ShowAlert({
                 title: "enter password", buttonText: "Submit",
                 text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
@@ -119,7 +108,7 @@ const Register = () => {
                     <input type="checkbox" defaultChecked name="" id="" className='new' /> <span>click here</span>
                 </div>
 
-                <button onClick={() => senddata()}>Submit</button>
+                <Button variant='outline-primary' onClick={() => senddata()}>Submit</Button>
                 {/* </form> */}
             </div>
         </section>
@@ -137,6 +126,17 @@ export default Register;
 
 
 
+// const getdata = (e) => {
+//     const { name, value } = e.target;
+//     // console.log(value);
+
+//     setData((preval) => {
+//         return {
+//             ...preval,
+//             [name]: value
+//         }
+//     })
+// };
 
 
 
