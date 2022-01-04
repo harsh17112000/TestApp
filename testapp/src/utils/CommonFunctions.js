@@ -2,12 +2,13 @@ import React from 'react'
 import swal from 'sweetalert';
 
 
-export const ShowAlert = ({ title, text, buttonText, onSubmit }) => {
+export const ShowAlert = ({ title, text, buttonText, onSubmit, icon }) => {
 
     swal({
         title: title,
         text: text,
-        buttons: buttonText
+        buttons: buttonText,
+        icon : icon
     }).then((event) => {
 
         onSubmit(event)

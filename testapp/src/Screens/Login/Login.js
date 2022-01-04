@@ -1,7 +1,7 @@
 
 import React , {useState} from 'react'
 import { ShowAlert, ValidateEmail } from '../../utils/CommonFunctions'
-import swal from 'sweetalert';
+
 
 
 const Login = () => {
@@ -23,6 +23,10 @@ const Login = () => {
         })
     }
 
+    const onAlertButtonTap = (data) => {
+        console.log("all done" + JSON.stringify(data));
+    }
+
     const clicked = (e)=>{
         e.preventDefault();
 
@@ -37,8 +41,11 @@ const Login = () => {
                 title: "enter email", buttonText: "Submit",
                 text: "sub text", onSubmit: (data) => onAlertButtonTap(data)
             })
+        }
+        else if (ValidateEmail(data.email)) {
+            ShowAlert("fill data with @!", "You clicked the button!", "error");
         }else{
-            swal({
+            ShowAlert({
                 title: "Good job!",
                 text:  ` your email is ${email}`,
                 icon: "success",

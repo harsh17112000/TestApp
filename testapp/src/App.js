@@ -6,7 +6,7 @@ import "./Screens/Login/login.css"
 
 const App = () => {
   return (
-      <Register />
+      <Login />
   );
     <>
       <Login/>
