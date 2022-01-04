@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./register.css";
 import { ShowAlert, ValidateEmail } from '../../utils/CommonFunctions'
 import Button from 'react-bootstrap/Button'
+import { NavLink } from "react-router-dom"
 
 const Register = () => {
 
@@ -109,6 +110,7 @@ const Register = () => {
                 </div>
 
                 <Button variant='outline-primary' onClick={() => senddata()}>Submit</Button>
+                <span className='mt-3'>create a account <NavLink to = "/">login</NavLink> </span>
                 {/* </form> */}
             </div>
         </section>
